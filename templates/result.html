@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background: #222831;
+            color: #EEEEEE;
+            text-align: center;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Result Container */
+        .result-container {
+            background: #31363F;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border: 2px solid #76ABAE;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        /* Headings */
+        h2 {
+            color: #76ABAE;
+            margin-bottom: 15px;
+        }
+
+        /* Uploaded Image */
+        img {
+            width: 100%;
+            max-width: 400px;
+            border: 3px solid #76ABAE;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        /* Prediction Text */
+        p {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Try Another Image Link */
+        a {
+            text-decoration: none;
+            background: #76ABAE;
+            color: #222831;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 6px;
+            transition: background 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+
+        a:hover {
+            background: #5d9195;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="result-container">
+        <h2>Pneumonia Prediction Results</h2>
+        <img src="{{ image_path }}" alt="Uploaded X-Ray">
+        <p>Prediction: {{ results["Random Forest Prediction"] }}</p>
+        <a href="/">Try Another Image</a>
+    </div>
+
+</body>
+</html>
